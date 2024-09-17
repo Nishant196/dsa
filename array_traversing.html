@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array traversing</title>
+    <script>
+        let data = [9, 14, 23, 65, 78, 29, 54, 39];
+        for(let i=0;i<data.length;i++){
+            document.write(`Index ${i} is ${data[i]} <br/>`)
+        }
+
+        let x = 5;
+        document.write(data[x]);
+
+        function getElement() {
+            let el = document.getElementById('element').value;
+            if(isNaN(parseInt(el))){
+                alert('Input should be a number');
+            } else {
+                if(el >= 0) {
+                    if(el < data.length){
+                        alert(data[el]);
+                    } else {
+                        alert('Please enter a valid input');
+                    }
+                } else {
+                    alert('Input should be a positive number');
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div style="border: 1px solid #AAA;border-radius: 0.3rem;padding: 20px;width: max-content;">
+        <p>Find index in the above array</p>
+        <input type="text" id="element" />
+        <br/><br/>
+        <button onclick="getElement()">Submit</button>
+    </div>
+</body>
+</html>
